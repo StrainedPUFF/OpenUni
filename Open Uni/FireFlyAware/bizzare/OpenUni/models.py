@@ -42,4 +42,14 @@ class Answer(models.Model):
     votes = models.IntegerField(default=0)
     def __str__(self):
         return self.answer_text
-    
+class Musician(models.Model):
+     first_name = models.CharField(max_length=50)
+     last_name = models.CharField(max_length=50)
+     
+class Album(models.Model):
+    musician =models.ForeignKey(Musician, on_delete=models.CASCADE)
+    song_title= models.CharField(max_length =50)
+    song_release_date = models.DateTimeField('date published')
+    SongNo = models.IntegerField()
+    def __str__(self):
+        return self.song_title
