@@ -1,0 +1,72 @@
+# import datetime
+# from django.utils import timezone
+# from django.db import models
+
+# # Create your models here.
+# class Question (models.Model):
+#     question_text = models.CharField(max_length=200)
+#     pub_date = models.DateTimeField('date published')
+#     def __str__(self):
+#         return self.question_text
+#     def was_published_recently(self):
+#         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+    
+#     class Choice (models.Model):
+#         question = models.ForeignKey(Question , on_delete=models.CASCADE)
+#         answer_text =models.CharField(max = 200)
+#         votes = models.IntegerField(default=0)
+        
+        
+#         def __str__(self):
+#             return self.choice_text
+        
+import datetime 
+from django.utils import timezone
+
+# Create your models here.
+from django.db import models
+
+
+# class Question(models.Model):
+#     question_text = models.CharField(max_length=200)
+#     pub_date = models.DateTimeField("date published")
+    
+# def __str__(self):
+#         return self.question_text
+# def was_published_recently(self):
+#         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+
+# class Answer(models.Model):
+#     question = models.ForeignKey(Question, on_delete=models.CASCADE)
+#     answer_text = models.CharField(max_length=200)
+#     votes = models.IntegerField(default=0)
+#     def __str__(self):
+#         return self.answer_text
+# class Musician(models.Model):
+#      first_name = models.CharField(max_length=50)
+#      last_name = models.CharField(max_length=50)
+     
+# class Album(models.Model):
+#     musician =models.ForeignKey(Musician, on_delete=models.CASCADE)
+#     song_title= models.CharField(max_length =50)
+#     song_release_date = models.DateTimeField('date published')
+#     SongNo = models.IntegerField()
+#     def __str__(self):
+#         return self.song_title
+
+class Category(models.Model):
+    listed_category = models.CharField(max_length=500)
+    sub_category =models.CharField(max_length = 500)
+    pub_date=models.DateTimeField("date published")
+    clicks = models.IntegerField(default=0)
+def __str__(self):
+        return self.reading_category
+def was_published_recently(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+    
+class Provider(models.Model):
+    provider_name = models.CharField(max_length=500)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    clicks = models.IntegerField(default=0)
+def __str__(self):
+        return self.provider_name
