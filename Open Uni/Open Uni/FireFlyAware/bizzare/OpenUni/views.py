@@ -1,16 +1,37 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 # Create your views here.
+# from django.http import HttpResponse
+from django.template import loader
+
+from .models import Category
+
+
+# def index(request):
+#     latest_category_list = Category.objects.order_by("-pub_date")[:5]
+#     template = loader.get_template("OpenUni/index.html")
+#     context = {
+#         "latest_category_list": latest_category_list,
+#     }
+#     return HttpResponse(template.render(context, request))
+
 def index(request):
-    return HttpResponse("Hello, welcome to Wesworld.")
+    latest_category_list = Category.objects.order_by("-pub_date")[:5]
+    context = {"latest_category_list": latest_category_list}
+    return render(request, "OpenUni/index.html", context)
+# def detail(request, category_id):
+#     return HttpResponse("These are the categories available%s." % category_id)
+
 def detail(request, question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
+    category = get_object_or_404(Category, pk=question_id)
+    return render(request, "OpenUni/detail.html", {"category": category})
 
 
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
+
+def homepage(request, category_id):
+    response = "You're at our homepage %s."
+    return HttpResponse(response % category_id)
 
 
-def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
+def menu(request, category_id):
+    return HttpResponse("You're at our menu window%s." % category_id)

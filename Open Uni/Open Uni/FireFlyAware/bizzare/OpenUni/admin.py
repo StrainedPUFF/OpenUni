@@ -1,6 +1,6 @@
 from django.contrib import admin
 # from .models import Question, Answer, Musician, Album
-from .models import Category
+from .models import Category, Provider
 # Register your models here.
 # admin.site.register(Question)
 # admin.site.register(Answer)
@@ -8,3 +8,4 @@ from .models import Category
 # admin.site.register(Album)
 
 admin.site.register(Category)
+admin.site.register(Provider)

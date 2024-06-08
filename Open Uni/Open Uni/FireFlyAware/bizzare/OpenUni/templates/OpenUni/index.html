@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello!</title>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <link rel="stylesheet" href="./stylesheet.css" type="text/css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=font1|font2|etc"
+      type="text/css"
+    />
+  </head>
+  <body>
+    {% if latest_category_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        {% comment %} <li><a href="/OpenUni/{{ category.id }}/">{{ category.category_text }}</a></li> 
+        {% endcomment %}
+        {% comment %} <li><a href="{% url 'detail' category.id %}">{{ category.category_text }}</a></li>
+        <li><a href="{% url 'OpenUni:detail' category.id %}">{{ category.category_text }}</a></li> {% endcomment %}
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No categories available at the moment.</p>
+{% endif %}
+  </body>
+</html>
