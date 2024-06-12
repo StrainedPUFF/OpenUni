@@ -7,10 +7,16 @@
     <meta name="description" content="description"/>
     <meta name="author" content="author" />
     <meta name="keywords" content="keywords" />
-    <link rel="stylesheet" href="{% static '/OpenUni/stylesheet.css' %}"/>
+    <link rel="stylesheet" href="{% static '/OpenUni/styles.css' %}"/>
+    <link rel="stylesheet" href="{% static '/OpenUni/styles2.css' %}"/>
   </head>
-  <body style="background: rgb(150, 75, 18);">
+  <body>
     <h1>Welcome to the home page, Ready to make your next big step???</h1>
+    <div class="topnav">
+      <a href="/">HOME</a> |
+      <a href="/members">MEMBERS</a>
+    </div>
+    
     {% if latest_category_list %}
     <ul>
     {% for question in latest_question_list %}

@@ -7,8 +7,7 @@
     <meta name="description" content="description"/>
     <meta name="author" content="author" />
     <meta name="keywords" content="keywords" />
-    {% comment %} <link rel="stylesheet" href="OpenUni/stylesheet.css" type="text/css" /> {% endcomment %}
-    <link rel="stylesheet" href="{% static 'OpenUni/stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'OpenUni/styles2.css' %}">
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
     <link
       rel="stylesheet"
@@ -17,6 +16,7 @@
     />
   </head>
   <body>
+    
     <h1>{{ category.category_text }}</h1>
 <ul>
 {% for provider in category.provider_set.all %}
