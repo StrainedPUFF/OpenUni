@@ -2,8 +2,35 @@ body{
     background-image: url("home.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    margin:15;
+    /* margin:15;
     font: 600 18px 'Source Sans Pro', sans-serif;
     letter-spacing: 0.64px;
-    color: #066e97;
+    color: #066e97; */
 }
+
+h1{
+    color: rgb(29, 14, 163);
+    /* background-color: aqua; */
+    text-align: center;
+    font-size: 50px;
+    padding: 0.5%;
+    margin: auto;
+}
+
+/* .topnav {
+    background-color:#bd4108;
+    color:#d4c00a;
+    padding:10px;
+  }
+  .topnav a:link, .topnav a:visited {
+    text-decoration: none;
+    color: #ffffff; 
+  }
+  .topnav a:hover, .topnav a:active {
+    text-decoration: underline;
+  }
+
+  .main, .main h1 {
+    text-align:center;
+    color:#046969;
+  }  */

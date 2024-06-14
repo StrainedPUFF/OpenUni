@@ -11,18 +11,24 @@
     <link rel="stylesheet" href="{% static '/OpenUni/styles2.css' %}"/>
   </head>
   <body>
-    <h1>Welcome to the home page, Ready to make your next big step???</h1>
     <div class="topnav">
-      <a href="/">HOME</a> |
-      <a href="/members">MEMBERS</a>
+      <h1>Open Uni.</h1>
     </div>
-    
+    <div class="nav">
+      <a href="/">HOME</a> |
+      <a href="/categories">DASHBOARD</a> |
+      <a href="https://www.w3schools.com/css/default.asp">TOP COURSES</a>
+    </div><br>
+    <div class="actions">
+      <a href="/OpenUni/add/">Add Category</a>
+    </div>
     {% if latest_category_list %}
     <ul>
     {% for question in latest_question_list %}
         <li><a href="/OpenUni/{{ category.id }}/">{{ category.category_text }}</a></li> 
         <li><a href="{% url 'detail' category.id %}">{{ category.category_text }}</a></li>
         <li><a href="{% url 'OpenUni:detail' category.id %}">{{ category.category_text }}</a></li>
+        <li><a href="https://www.w3schools.com/css/default.asp">TOP COURSES</a></li>
     {% endfor %}
     </ul>
 {% else %}
